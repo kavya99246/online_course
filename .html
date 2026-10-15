@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Course Platform</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6fb;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #3525a8;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        header h1 {
+            margin-bottom: 8px;
+        }
+
+        nav {
+            background-color: #241878;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            color: #ffd166;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 25px;
+        }
+
+        h2 {
+            color: #3525a8;
+            margin-bottom: 15px;
+        }
+
+        /* Course categories using CSS Grid */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+
+        .category {
+            background: white;
+            padding: 18px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #00000010;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .category:hover {
+            transform: translateY(-5px);
+            background-color: #e8e5ff;
+        }
+
+        /* Course cards using CSS Grid */
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px #00000015;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px #00000025;
+        }
+
+        .course-banner {
+            padding: 30px 15px;
+            text-align: center;
+            color: white;
+            font-size: 42px;
+        }
+
+        .python {
+            background: linear-gradient(135deg, #306998, #4b8bbe);
+        }
+
+        .web {
+            background: linear-gradient(135deg, #e44d26, #f16529);
+        }
+
+        .java {
+            background: linear-gradient(135deg, #1769aa, #42a5f5);
+        }
+
+        .design {
+            background: linear-gradient(135deg, #8e44ad, #d66efd);
+        }
+
+        .course-content {
+            padding: 20px;
+        }
+
+        .course-content h3 {
+            color: #3525a8;
+            margin-bottom: 10px;
+        }
+
+        .instructions {
+            margin: 12px 0;
+            padding-left: 20px;
+        }
+
+        .details {
+            margin: 15px 0;
+            color: #444;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+            color: #14804a;
+            margin-bottom: 15px;
+        }
+
+        .enroll-btn {
+            display: block;
+            width: 100%;
+            border: none;
+            background-color: #3525a8;
+            color: white;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .enroll-btn:hover {
+            background-color: #20166e;
+            transform: scale(1.03);
+        }
+
+        footer {
+            margin-top: 40px;
+            background-color: #241878;
+            color: white;
+            text-align: center;
+            padding: 18px;
+        }
+
+        /* Responsive layout */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
+            }
+
+            .courses {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>LearnHub</h1>
+        <p>Learn new skills. Build your future.</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#courses">Courses</a>
+    </nav>
+
+    <main class="container" id="home">
+
+        <section id="categories">
+            <h2>Course Categories</h2>
+
+            <div class="categories">
+                <div class="category">💻 Programming</div>
+                <div class="category">🌐 Web Development</div>
+                <div class="category">☕ Java</div>
+                <div class="category">🎨 UI/UX Design</div>
+            </div>
+        </section>
+
+        <section id="courses">
+            <h2>Popular Courses</h2>
+
+            <div class="courses">
+
+                <article class="course-card">
+                    <div class="course-banner python">🐍</div>
+                    <div class="course-content">
+                        <h3>Python Programming</h3>
+                        <p>Learn Python from basics to advanced concepts.</p>
+
+                        <ul class="instructions">
+                            <li>No prior coding required</li>
+                            <li>Complete weekly exercises</li>
+                            <li>Build a mini project</li>
+                        </ul>
+
+                        <div class="details">
+                            <p>⏱ Duration: 6 weeks</p>
+                            <p>📚 Level: Beginner</p>
+                        </div>
+
+                        <p class="price">₹999</p>
+                        <button class="enroll-btn"
+                            onclick="enroll('Python Programming')">
+                            Enroll Now
+                        </button>
+                    </div>
+                </article>
+
+                <article class="course-card">
+                    <div class="course-banner web">🌐</div>
+                    <div class="course-content">
+                        <h3>Web Development</h3>
+                        <p>Create responsive websites using HTML and CSS.</p>
+
+                        <ul class="instructions">
+                            <li>Practice HTML and CSS</li>
+                            <li>Complete website exercises</li>
+                            <li>Create a responsive website</li>
+                        </ul>
+
+                        <div class="details">
+                            <p>⏱ Duration: 8 weeks</p>
+                            <p>📚 Level: Beginner</p>
+                        </div>
+
+                        <p class="price">₹1499</p>
+                        <button class="enroll-btn"
+                            onclick="enroll('Web Development')">
+                            Enroll Now
+                        </button>
+                    </div>
+                </article>
+
+                <article class="course-card">
+                    <div class="course-banner java">☕</div>
+                    <div class="course-content">
+                        <h3>Java Programming</h3>
+                        <p>Understand OOP, classes, objects, and exceptions.</p>
+
+                        <ul class="instructions">
+                            <li>Learn Java fundamentals</li>
+                            <li>Practice coding problems</li>
+                            <li>Complete a Java project</li>
+                        </ul>
+
+                        <div class="details">
+                            <p>⏱ Duration: 7 weeks</p>
+                            <p>📚 Level: Intermediate</p>
+                        </div>
+
+                        <p class="price">₹1299</p>
+                        <button class="enroll-btn"
+                            onclick="enroll('Java Programming')">
+                            Enroll Now
+                        </button>
+                    </div>
+                </article>
+
+                <article class="course-card">
+                    <div class="course-banner design">🎨</div>
+                    <div class="course-content">
+                        <h3>UI/UX Design</h3>
+                        <p>Learn to design attractive and user-friendly interfaces.</p>
+
+                        <ul class="instructions">
+                            <li>Study design principles</li>
+                            <li>Create wireframes</li>
+                            <li>Build a design portfolio</li>
+                        </ul>
+
+                        <div class="details">
+                            <p>⏱ Duration: 4 weeks</p>
+                            <p>📚 Level: Beginner</p>
+                        </div>
+
+                        <p class="price">₹799</p>
+                        <button class="enroll-btn"
+                            onclick="enroll('UI/UX Design')">
+                            Enroll Now
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 LearnHub | Online Learning Platform</p>
+    </footer>
+
+    <script>
+        function enroll(courseName) {
+            alert("Thank you for your interest in " + courseName +
+                  "! Enrollment selected successfully.");
+        }
+    </script>
+
+</body>
+</html>
